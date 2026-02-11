@@ -1,18 +1,1 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-</head>
-<body>
-    <h1>Welcome to the page</h1>
-    <div>
-        <!-- YouTube Embed -->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameborder="0" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <footer>
-        <p>Footer content here</p>
-    </footer>
-</body>
-</html>
+<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>YouTube Embed</title>\n    <style>\n        .video-container {\n            position: relative;\n            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */\n            height: 0;\n            overflow: hidden;\n        }\n        .video-container iframe {\n            position: absolute;\n            top: 0;\n            left: 0;\n            width: 100%;\n            height: 100%;\n        }\n    </style>\n</head>\n<body>\n    <h1>Welcome to My YouTube Video</h1>\n    <div class=\"video-container\">\n        <iframe src=\"https://www.youtube.com/embed/YOUR_VIDEO_ID\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n    </div>\n</body>\n</html>\n
