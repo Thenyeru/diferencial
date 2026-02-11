@@ -1,0 +1,54 @@
+var _____WB$wombat$assign$function_____=function(name){return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name))||self[name];};if(!self.__WB_pmw){self.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opens = _____WB$wombat$assign$function_____("opens");
+jQuery(document).ready(function($) {
+
+	// For Slider
+	$( '.recent-post-slider' ).each(function( index ) {
+		
+		var slider_id   	= $(this).attr('id');			
+		var slider_conf 	= $.parseJSON( $(this).closest('.wppsac-slick-slider-wrp').find('.wppsac-slider-conf').attr('data-conf'));
+		
+		if( typeof(slider_id) != 'undefined' && slider_id != '' ) {
+			jQuery('#'+slider_id).slick({
+				dots			: (slider_conf.dots) == "true" ? true : false,
+				infinite		: true,
+				arrows			: (slider_conf.arrows) == "true" ? true : false,
+				speed			: parseInt(slider_conf.speed),
+				autoplay		: (slider_conf.autoplay) == "true" ? true : false,
+				autoplaySpeed	: parseInt(slider_conf.autoplay_interval),
+				slidesToShow	: 1,
+				slidesToScroll	: 1,
+				rtl             : (slider_conf.rtl) == "true" ? true : false,
+			});
+		}
+	});
+});
+}
+
+/*
+     FILE ARCHIVED ON 03:01:01 Aug 24, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:44:01 Feb 11, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.899
+  exclusion.robots: 0.04
+  exclusion.robots.policy: 0.025
+  esindex: 0.014
+  cdx.remote: 13.201
+  LoadShardBlock: 195.809 (3)
+  PetaboxLoader3.datanode: 184.558 (4)
+  load_resource: 132.63
+  PetaboxLoader3.resolve: 62.176
+*/

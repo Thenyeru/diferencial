@@ -1,0 +1,118 @@
+var _____WB$wombat$assign$function_____=function(name){return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name))||self[name];};if(!self.__WB_pmw){self.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opens = _____WB$wombat$assign$function_____("opens");
+/*global jQuery */
+
+/*!
+
+* FitText.js 1.2
+
+*
+
+* Copyright 2011, Dave Rupert http://daverupert.com
+
+* Released under the WTFPL license
+
+* http://sam.zoy.org/wtfpl/
+
+*
+
+* Date: Thu May 05 14:23:00 2011 -0600
+
+*/
+
+
+
+(function( $ ){
+
+
+
+  $.fn.fitText = function( kompressor, options ) {
+
+
+
+    // Setup options
+
+    var compressor = kompressor || 1,
+
+        settings = $.extend({
+
+          'minFontSize' : Number.NEGATIVE_INFINITY,
+
+          'maxFontSize' : Number.POSITIVE_INFINITY
+
+        }, options);
+
+
+
+    return this.each(function(){
+
+
+
+      // Store the object
+
+      var $this = $(this);
+
+
+
+      // Resizer() resizes items based on the object width divided by the compressor * 10
+
+      var resizer = function () {
+
+        $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+
+      };
+
+
+
+      // Call once to set.
+
+      resizer();
+
+
+
+      // Call on resize. Opera debounces their resize by default.
+
+      $(window).on('resize.fittext orientationchange.fittext', resizer);
+
+
+
+    });
+
+
+
+  };
+
+
+
+})( jQuery );
+
+
+}
+
+/*
+     FILE ARCHIVED ON 03:14:21 Aug 24, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:44:01 Feb 11, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.773
+  exclusion.robots: 0.027
+  exclusion.robots.policy: 0.016
+  esindex: 0.009
+  cdx.remote: 33.541
+  LoadShardBlock: 235.533 (3)
+  PetaboxLoader3.datanode: 430.84 (5)
+  load_resource: 443.092 (2)
+  PetaboxLoader3.resolve: 179.285 (2)
+*/

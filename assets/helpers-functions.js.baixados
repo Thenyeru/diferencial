@@ -1,0 +1,104 @@
+var _____WB$wombat$assign$function_____=function(name){return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name))||self[name];};if(!self.__WB_pmw){self.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opens = _____WB$wombat$assign$function_____("opens");
+(function($) {
+
+	
+
+		// Equal height blocks
+
+		// See @ http://css-tricks.com/equal-height-blocks-in-rows/
+
+		
+
+		equalheight = function(container){
+
+		
+
+			var currentTallest = 0,
+
+				 currentRowStart = 0,
+
+				 rowDivs = new Array(),
+
+				 $el,
+
+				 topPosition = 0;
+
+			 $(container).each(function() {
+
+			
+
+			   $el = $(this);
+
+			   $($el).height('auto')
+
+			   topPostion = $el.position().top;
+
+			
+
+			   if (currentRowStart != topPostion) {
+
+				 for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+
+				   rowDivs[currentDiv].height(currentTallest);
+
+				 }
+
+				 rowDivs.length = 0; // empty the array
+
+				 currentRowStart = topPostion;
+
+				 currentTallest = $el.height();
+
+				 rowDivs.push($el);
+
+			   } else {
+
+				 rowDivs.push($el);
+
+				 currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+
+			  }
+
+			   for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+
+				 rowDivs[currentDiv].height(currentTallest);
+
+			   }
+
+			 });
+
+		} //EOF function equalheight	
+
+
+
+})(jQuery);
+}
+
+/*
+     FILE ARCHIVED ON 05:10:59 Aug 24, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:43:59 Feb 11, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 2.429
+  exclusion.robots: 0.045
+  exclusion.robots.policy: 0.029
+  esindex: 0.015
+  cdx.remote: 33.681
+  LoadShardBlock: 169.367 (3)
+  PetaboxLoader3.datanode: 283.009 (5)
+  PetaboxLoader3.resolve: 497.629 (3)
+  load_resource: 839.753 (2)
+*/
