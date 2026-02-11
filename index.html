@@ -1,7 +1,136 @@
 <!DOCTYPE html>
 <!-- saved from url=(0076)./ -->
 <html lang="pt-BR" prefix="og: http://ogp.me/ns#" class="js" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+    }
 
+    .whatsapp-button {
+        background-color: #25D366;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .whatsapp-button:hover {
+        background-color: #128C7E;
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .whatsapp-button svg {
+        width: 32px;
+        height: 32px;
+        fill: white;
+    }
+
+    /* Message Bubble */
+    .whatsapp-message {
+        position: absolute;
+        bottom: 70px;
+        right: 0;
+        background-color: white;
+        padding: 12px 16px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        white-space: nowrap;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: slideUp 0.5s ease forwards 1s;
+        pointer-events: none;
+    }
+
+    .whatsapp-message::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        right: 20px;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid white;
+    }
+
+    .whatsapp-message p {
+        margin: 0;
+        color: #333;
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Animation */
+    @keyframes slideUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Pulse animation for the button */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+    }
+
+    .whatsapp-button {
+        animation: pulse 2s infinite;
+    }
+
+    .whatsapp-button:hover {
+        animation: none;
+    }
+
+    /* Responsive - Hide message on mobile */
+    @media (max-width: 768px) {
+        .whatsapp-message {
+            display: none;
+        }
+        
+        .whatsapp-float {
+            bottom: 15px;
+            right: 15px;
+        }
+        
+        .whatsapp-button {
+            width: 55px;
+            height: 55px;
+        }
+    }
+</style>
+
+<!-- HTML - Cole antes do </body> -->
+<div class="whatsapp-float">
+    <div class="whatsapp-message">
+        <p>Entre em contato conosco</p>
+    </div>
+    <a href="https://wa.me/553187290075" target="_blank" class="whatsapp-button" aria-label="Contato via WhatsApp">
+        <!-- WhatsApp Icon SVG -->
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.253 1.408 1.417-5.236-0.321-0.524c-1.321-2.156-2.017-4.639-2.017-7.187 0-7.444 6.056-13.5 13.5-13.5s13.5 6.056 13.5 13.5c0 7.444-6.056 13.5-13.5 13.5zM21.793 18.708c-0.397-0.199-2.348-1.158-2.713-1.291-0.365-0.132-0.63-0.199-0.895 0.199s-1.028 1.291-1.26 1.556c-0.232 0.265-0.464 0.298-0.861 0.099s-1.679-0.619-3.197-1.973c-1.182-1.054-1.98-2.356-2.212-2.753s-0.025-0.611 0.174-0.809c0.179-0.178 0.397-0.464 0.596-0.696s0.265-0.397 0.397-0.662c0.132-0.265 0.066-0.497-0.033-0.696s-0.895-2.154-1.226-2.949c-0.322-0.776-0.649-0.67-0.895-0.683-0.232-0.012-0.497-0.015-0.762-0.015s-0.696 0.099-1.061 0.497c-0.365 0.397-1.393 1.36-1.393 3.318s1.426 3.848 1.625 4.113c0.199 0.265 2.807 4.282 6.802 6.004 0.95 0.411 1.691 0.656 2.27 0.839 0.955 0.303 1.824 0.26 2.512 0.158 0.766-0.115 2.348-0.96 2.68-1.888s0.331-1.723 0.232-1.888c-0.099-0.165-0.364-0.265-0.761-0.464z"/>
+        </svg>
+    </a>
+</div>
 
 
 <!-- End Wayback Rewrite JS Include -->
@@ -354,7 +483,7 @@ var panelsStyles = {"fullContainer":"body"};
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-56425198-2', 'auto');
   ga('send', 'pageview');
 </script>
